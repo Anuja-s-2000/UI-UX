@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Hospital Equipment Management</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        .row.content {
+            height: 620px;
+        }
+
+        .sidenav {
+            background-image: url(bg1.jpg);
+            height: 100%;
+        }
+
+        header,footer {
+            background-color: rgb(0, 217, 255);
+            color: white;
+            padding: 15px;
+        }
+        .container {
+            margin-top: 25px;
+            margin-bottom: 20px;
+            padding: 25px 2% 25px 2%;
+            border: 2px solid black;
+            border-radius: 8px;
+            width: 100%;
+            color:#337ab7 ;
+        }
+        @media screen and (max-width: 1080px) and (min-width:768px){
+
+            .sidenav {
+                width:100%;
+                height:40%;
+            }
+            .cen{
+                width: 100%;
+                height:auto;
+            }
+
+        }
+
+        @media screen and (max-width: 767px) {
+            .sidenav {
+                height:30%;
+            }
+
+            .container {
+                height: auto;
+                width:100%;
+            }
+
+            .row.content {
+            height: 1300px;
+            }
+        }
+     
+
+        
+
+    </style>
+</head>
+
+<body class="responsive">
+    <header class="container-fluid">
+        <ul class="nav nav-pills" style="float:right">
+            <li><a href="#">Home</a></li>
+            <li class="active"><a href="#">Equipments</a></li>
+            <li><a href="#">Departments</a></li>
+            <li><a href="#">Warehouse</a></li>
+
+        </ul>
+    </header>
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav">
+            </div>
+
+            <div class="col-sm-9 cen">
+                <div class="container">
+                    <h3 style="text-align: center">Equipments Detail</h3><br/>
+                        
+                        <form class="form-horizontal">
+                        <div class="form-group">
+                          <label class="control-label col-sm-5" for="maxRows">Select number of Equipments to be displayed in a page:</label>
+                          <div class="col-sm-7">
+                            <select name="state" class="form-control" id="maxRows">
+                                <option value="100">Show All</option>
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>                                
+                            </select>
+                          </div>
+                        </div></form>
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="table-id">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th class="text-center">Name</th>
+                                    <th class="text-center">Total Quantity</th>
+                                    <th class="text-center">In Warehouse</th>
+                                    <th class="text-center">In Departments</th>
+                                    <th class="text-center">Discarded</th>
+                                    <th class="text-center">Departments</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                   <td>1</td>
+                                   <td>Thermometer</td>
+                                   <td class="text-center">80</td>
+                                   <td class="text-center">10</td>
+                                   <td class="text-center">70</td>
+                                   <td class="text-center">50</td>
+                                   <td>All Departments</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Pharmaceutical Refrigirator Small</td>
+                                    <td class="text-center">10</td>
+                                    <td class="text-center">0</td>
+                                    <td class="text-center">10</td>
+                                    <td class="text-center">1</td>
+                                    <td>All Departments</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Pharmaceutical Refrigirator Large</td>
+                                    <td class="text-center">2</td>
+                                    <td class="text-center">0</td>
+                                    <td class="text-center">2</td>
+                                    <td class="text-center">0</td>
+                                    <td>Pharmacy</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Oxygen Incubators</td>
+                                    <td class="text-center">10</td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center">9</td>
+                                    <td class="text-center">1</td>
+                                    <td>In Patient Ward</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Surgical Instruments</td>
+                                    <td class="text-center">20</td>
+                                    <td class="text-center">2</td>
+                                    <td class="text-center">18</td>
+                                    <td class="text-center">15</td>
+                                    <td>Surgery</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Respirator</td>
+                                    <td class="text-center">30</td>
+                                    <td class="text-center">5</td>
+                                    <td class="text-center">25</td>
+                                    <td class="text-center">20</td>
+                                    <td>In Patient Ward, Surgery</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>ENT Workstation</td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center">0</td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center">0</td>
+                                    <td>ENT</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Thermometer</td>
+                                    <td class="text-center">80</td>
+                                    <td class="text-center">10</td>
+                                    <td class="text-center">70</td>
+                                    <td class="text-center">50</td>
+                                    <td>All Departments</td>
+                                 </tr>
+                                 <tr>
+                                     <td>9</td>
+                                     <td>Pharmaceutical Refrigirator Small</td>
+                                     <td class="text-center">10</td>
+                                     <td class="text-center">0</td>
+                                     <td class="text-center">10</td>
+                                     <td class="text-center">1</td>
+                                     <td>All Departments</td>
+                                 </tr>
+                                 <tr>
+                                     <td>10</td>
+                                     <td>Pharmaceutical Refrigirator Large</td>
+                                     <td class="text-center">2</td>
+                                     <td class="text-center">0</td>
+                                     <td class="text-center">2</td>
+                                     <td class="text-center">0</td>
+                                     <td>Pharmacy</td>
+                                 </tr>
+                                 <tr>
+                                     <td>11</td>
+                                     <td>Oxygen Incubators</td>
+                                     <td class="text-center">10</td>
+                                     <td class="text-center">1</td>
+                                     <td class="text-center">9</td>
+                                     <td class="text-center">1</td>
+                                     <td>In Patient Ward</td>
+                                 </tr>
+                                 <tr>
+                                     <td>12</td>
+                                     <td>Surgical Instruments</td>
+                                     <td class="text-center">20</td>
+                                     <td class="text-center">2</td>
+                                     <td class="text-center">18</td>
+                                     <td class="text-center">15</td>
+                                     <td>Surgery</td>
+                                 </tr>
+                                 <tr>
+                                     <td>13</td>
+                                     <td>Respirator</td>
+                                     <td class="text-center">30</td>
+                                     <td class="text-center">5</td>
+                                     <td class="text-center">25</td>
+                                     <td class="text-center">20</td>
+                                     <td>In Patient Ward, Surgery</td>
+                                 </tr>
+                                 <tr>
+                                     <td>14</td>
+                                     <td>ENT Workstation</td>
+                                     <td class="text-center">1</td>
+                                     <td class="text-center">0</td>
+                                     <td class="text-center">1</td>
+                                     <td class="text-center">0</td>
+                                     <td>ENT</td>
+                                 </tr>
+                            </tbody>
+                        </table>
+                        <div  class="pagination-container">
+                            <nav>
+                                <ul class="pagination"></ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    <script>
+        var table='#table-id'
+        $('#maxRows').on('change',function(){
+            $('.pagination').html('')
+            var trnum=0
+            var maxRows=parseInt($(this).val())
+            var totalRows=$(table+' tbody tr').length
+            $(table+' tr:gt(0)').each(function(){
+                trnum++
+                if(trnum > maxRows){
+                    $(this).hide()
+                }
+                if(trnum <= maxRows){
+                    $(this).show()
+                }
+            })
+            if(totalRows > maxRows){
+                var pagenum=Math.ceil(totalRows/maxRows)
+                for(var i=1;i<=pagenum;){
+                    $('.pagination').append('<li data-page="'+ i +'">\<span>'+ i++ +'<span class="sr-only">(current)</span></span>\</li>').show()
+                }
+            }
+            $('.pagination li:first-child').addClass('active')
+            $('.pagination li').on('click',function(){
+                var pagenum = $(this).attr('data-page')
+                var trIndex=0;
+                $('.pagination li').removeClass('active')
+                $(this).addClass('active')
+                $(table+' tr:gt(0)').each(function(){
+                    trIndex++
+                    if(trIndex>(maxRows*pagenum) || trIndex <= ((maxRows*pagenum)-maxRows)){
+                        $(this).hide()
+                    } else{
+                        $(this).show()
+                    }
+                })
+            })
+        })
+        
+    </script>
+
+<footer class="container-fluid"></footer>
+</body>
+
+</html>

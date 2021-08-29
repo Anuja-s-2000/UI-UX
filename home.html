@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Hospital Equipment Management</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+    <style>
+        .row.content {
+            height: 700px;
+        }
+
+        .sidenav {
+            background-image: url(bg1.jpg);
+            height: 100%;
+        }
+
+        header,footer {
+            background-color: rgb(0, 217, 255);
+            color: white;
+            padding: 15px;
+        }
+        .container {
+            margin-top: 25px;
+            margin-bottom: 20px;
+            padding: 25px 2% 25px 2%;
+            border: 2px solid black;
+            border-radius: 8px;
+            width: 100%;
+            
+        }
+        @media screen and (max-width: 1080px) and (min-width:768px){
+
+            .sidenav {
+                width:100%;
+                height:40%;
+            }
+            .cen{
+                width: 100%;
+                height:auto;
+            }
+
+        }
+
+        @media screen and (max-width: 767px) {
+            .sidenav {
+                height:20%;
+            }
+
+            .container {
+                height: auto;
+                width:100%;
+            }
+
+            .row.content {
+            height: 2000px;
+            }
+
+            @media screen and (max-width: 610px) {
+                .row.content {
+            height: 2050px;
+            }
+        }
+     
+
+        }
+
+    </style>
+</head>
+
+<body class="responsive">
+    <header class="container-fluid">
+        <ul class="nav nav-pills" style="float:right">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Equipments</a></li>
+            <li><a href="#">Departments</a></li>
+            <li><a href="#">Warehouse</a></li>
+
+        </ul>
+    </header>
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav">
+
+            </div>
+
+            <div class="col-sm-9 cen">
+                <div class="container">
+                    <div class="col-sm-4">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item"
+                                style="border: 1.5px solid rgba(0, 140, 200,0.9);">Equipments</a>
+                            <a href="#" class="list-group-item"
+                                style="border: 1.5px solid rgba(0, 140, 200,0.9);">Equipments Allocation</a>
+                            <a href="#" class="list-group-item"
+                                style="border: 1.5px solid rgba(0, 140, 200,0.9);">Equipment Detail</a>
+                            <a href="#" class="list-group-item"
+                                style="border: 1.5px solid rgba(0, 140, 200,0.9);">Equipments Purchase</a>
+                            <a href="#" class="list-group-item"
+                                style="border: 1.5px solid rgba(0, 140, 200,0.9);">Equipment Discard</a>
+                        </div>
+
+                        <div class="list-group">
+                            <a href="#" class="list-group-item"
+                                style="border: 1.5px solid rgba(0, 140, 200,0.9);">Warehouse Available Equipments
+                                List</a>
+                            <a href="#" class="list-group-item"
+                                style="border: 1.5px solid rgba(0, 140, 200,0.9);">Equipments Purchase History</a>
+                            <a href="#" class="list-group-item"
+                                style="border: 1.5px solid rgba(0, 140, 200,0.9);">Equipments Discard History</a>
+                            <a href="#" class="list-group-item" style="border: 1.5px solid rgba(0, 140, 200,0.9);">List
+                                of Equipment</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item"
+                                style="border: 1.5px solid rgba(0, 140, 200,0.9);">Departments</a>
+                            <a href="#" class="list-group-item"
+                                style="border: 1.5px solid rgba(0, 140, 200,0.9);">Department Available Equipments
+                                List</a>
+                            <a href="#" class="list-group-item"
+                                style="border: 1.5px solid rgba(0, 140, 200,0.9);">Department Returned Equipments
+                                History</a>
+                            <a href="#" class="list-group-item"
+                                style="border: 1.5px solid rgba(0, 140, 200,0.9);">Equipments Audit Details</a>
+
+                        </div>
+                        <div class="list-group">
+                            <a href="#" class="list-group-item"
+                                style="border: 1.5px solid rgba(0, 140, 200,0.9);">Issues</a>
+                            <a href="#" class="list-group-item"
+                                style="border: 1.5px solid rgba(0, 140, 200,0.9);">Equipment Issue Entry</a>
+                            <a href="#" class="list-group-item"
+                                style="border: 1.5px solid rgba(0, 140, 200,0.9);">Equipment Issue Resolvation
+                                Details</a>
+                        </div>
+                        <div class="list-group">
+                            <a href="#" class="list-group-item"
+                                style="border: 1.5px solid rgba(0, 140, 200,0.9);">Equipment Manager details</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+
+                        <center>
+                            <h4 style="color:#337ab7 ; text-align:center;"><strong>Equipments
+                                    Distribution</strong></h4><br />
+                            <h5 style="color:rgba(0, 140, 200,0.9) ;"> In Warehouse - 11.8%</h5>
+                            <h5 style="color:rgba(0, 140, 200,0.9) ;"> In Departments - 88.2%</h5>
+                        </center>
+                        <div id="donut-chart"></div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <script src="assets/js/vendor/morris/morris.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            donutChart();
+
+            $(window).resize(function () {
+                window.donutChart.redraw();
+            });
+        });
+        function donutChart() {
+            window.donutChart = Morris.Donut({
+                element: 'donut-chart',
+                data: [
+                    { label: "In Warehouse", value: 11.8 },
+                    { label: "In Departments", value: 88.2 },
+                ],
+                colors: ['#2fbbe8', '#72cae7'],
+                resize: true,
+                redraw: true
+            });
+        }
+
+    </script>
+
+<footer class="container-fluid"></footer>
+</body>
+
+</html>
